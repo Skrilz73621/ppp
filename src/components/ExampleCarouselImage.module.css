@@ -1,0 +1,15 @@
+.imageWrapper {
+    max-width: 10%;
+    max-height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .image {
+    max-width: 10%;
+    height: 10%;
+    object-fit: cover;
+  }
+  

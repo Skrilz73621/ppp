@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+    font-family: Raleway;
+}
+
+.typingContainer {
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: -1;
+    height: 100vh;
+}
+  

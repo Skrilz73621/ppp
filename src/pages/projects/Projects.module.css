@@ -1,0 +1,33 @@
+/* Стили для контейнера */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-x: hidden;
+}
+
+/* Стили для секций */
+.section {
+  position: relative;
+  opacity: 0; 
+  transform: translateX(0); 
+  transition: opacity ease, transform ease; 
+  z-index: 1;
+}
+
+.section:nth-child(odd) {
+  transform: translateX(-200px); 
+}
+
+.section:nth-child(even) {
+  transform: translateX(200px); 
+}
+
+.section .pet, .section .example, .section .navbar {
+  transition: transform ease, opacity ease;
+}
+
+.section:hover .pet, .section:hover .example, .section:hover .navbar {
+  transform: scale(1.05);
+  opacity: 0.1;
+}

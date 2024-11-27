@@ -1,0 +1,135 @@
+.notification {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    background: rgba(41, 41, 44, 0.5); /* Полупрозрачный фон */
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    margin-top: 10rem;
+    backdrop-filter: blur(2px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(10px); /* Поддержка Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная граница */
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff;
+}
+
+.notification:before {
+    position: absolute;
+    content: '';
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: rgba(24, 24, 27, 0.2); /* Полупрозрачный внутренний фон */
+    backdrop-filter: blur(5px); /* Легкое размытие для внутреннего слоя */
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.notification:after {
+    position: absolute;
+    content: '';
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+
+.notification:hover:after {
+    transform: translateX(0.15rem);
+}
+
+.notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 3rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notititle {
+    transform: translateX(0.15rem);
+}
+
+.notibody {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+    font-size: 1rem;
+}
+
+.notification:hover .notibody {
+    transform: translateX(0.25rem);
+}
+
+.notiglow,
+.notiborderglow {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.notiglow {
+    z-index: 3;
+}
+
+.notiborderglow {
+    z-index: 1;
+}
+
+.notification:hover .notiglow {
+    opacity: 0.1;
+}
+
+.notification:hover .notiborderglow {
+    opacity: 0.1;
+}
+
+.note {
+    color: var(--color);
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+}
+
+.btn {
+    z-index: 100;
+    position: absolute;
+    bottom: 1rem;   
+    left: 50%;      
+    transform: translateX(-50%); 
+    padding: 0.8rem 1.5rem;
+    background: var(--color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2a7dc9;
+    transform: scale(100, 10, 10);
+}
+
+.btn:active {
+    background-color: #1f65a5;
+}

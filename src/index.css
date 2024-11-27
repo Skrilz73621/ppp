@@ -1,0 +1,10 @@
+@layer library, reset, base, demo;
+@import 'https://unpkg.com/open-props@2.0.0-beta.5' layer(library);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
+
+
+body{
+  margin: 0px;
+  padding: 0px;
+  cursor: none;
+}

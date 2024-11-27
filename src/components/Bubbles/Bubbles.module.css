@@ -1,0 +1,14 @@
+.container{
+    background-image: url('https://plus.unsplash.com/premium_photo-1673448391005-d65e815bd026?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG98ZW58MHx8MHx8fDA%3D');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 50%;          /* прижатие к нижнему краю */
+    left: 50%; 
+    transform: translate(-150%, 50%);           /* или right: 0; для правого угла */
+    text-align: center;
+}
