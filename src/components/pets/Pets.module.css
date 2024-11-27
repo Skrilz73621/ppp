@@ -1,23 +1,30 @@
 .notification {
     z-index: 100;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     isolation: isolate;
     position: relative;
     width: 100%;
-    height: 20rem;
-    background: rgba(41, 41, 44, 0.5); /* Полупрозрачный фон */
+    height: 30rem;
     border-radius: 1rem;
-    overflow: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     margin-top: 10rem;
-    backdrop-filter: blur(2px); /* Размытие фона */
-    -webkit-backdrop-filter: blur(10px); /* Поддержка Safari */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Легкая тень */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная граница */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
     --color: #32a6ff;
+}
+
+.image img {
+    width: 600px;
+    margin-top: 1rem;
+    object-fit: cover;
+    /* Обеспечивает правильное отображение изображения */
+    border-radius: 0.5rem;
 }
 
 .notification:before {
@@ -25,8 +32,8 @@
     content: '';
     inset: 0.0625rem;
     border-radius: 0.9375rem;
-    background: rgba(24, 24, 27, 0.2); /* Полупрозрачный внутренний фон */
-    backdrop-filter: blur(5px); /* Легкое размытие для внутреннего слоя */
+    backdrop-filter: blur(5px);
+    /* Легкое размытие для внутреннего слоя */
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
 }
@@ -60,11 +67,12 @@
 }
 
 .notibody {
+    width: 50rem;
     color: #99999d;
     padding: 0 1.25rem;
     transition: transform 300ms ease;
     z-index: 5;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .notification:hover .notibody {
@@ -111,9 +119,9 @@
 .btn {
     z-index: 100;
     position: absolute;
-    bottom: 1rem;   
-    left: 50%;      
-    transform: translateX(-50%); 
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.8rem 1.5rem;
     background: var(--color);
     color: white;
@@ -132,4 +140,46 @@
 
 .btn:active {
     background-color: #1f65a5;
+}
+
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 1514px) {
+    .notification{
+        overflow-x: hidden;
+    }
+
+    .notification {
+        flex-direction: column;
+        /* Переход к вертикальному расположению */
+        height: auto;
+        margin-top: 5rem;
+        /* Уменьшаем отступ сверху */
+    }
+
+    .image img {
+        width: 100%;
+        /* Изображение на мобильных устройствах будет занимать всю ширину */
+        height: 15rem;
+        /* Ограничиваем высоту изображения */
+        margin-top: 1rem;
+    }
+
+    .notititle {
+        font-size: 2.5rem;
+        /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .notibody {
+        width: 80%;
+        /* Уменьшаем ширину текста */
+        font-size: 2rem;
+        /* Уменьшаем размер шрифта */
+        padding: 0 1rem;
+        /* Меньше отступов для мобильных */
+    }
+}
+
+@media (max-width: 1515px){
+
 }

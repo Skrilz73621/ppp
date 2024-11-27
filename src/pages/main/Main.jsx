@@ -67,7 +67,7 @@ export default function Main() {
   return (
     <div style={{ overflow: 'hidden' }}>
       <Example id="particles" backgroundColor="#000000" particleColor="#FFFFFF" />
-      <Navbar />
+
 
       <div ref={aboutRef} style={{ textAlign: 'center', color: 'white', marginTop: '10rem' }}>
         <h1 style={{ fontSize: '4rem' }}>About me</h1>

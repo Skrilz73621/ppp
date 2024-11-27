@@ -33,13 +33,12 @@ export default function Contacts() {
   }, []);
 
   return (
-    <div style={{ overflowX: 'hidden', height: '100vh' }}>
+    <div>
       <Example id="particles" backgroundColor="#42313a" particleColor="#f1dcc9" />
-      <Navbar />
 
       <div
         ref={cardsWrapperRef}
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', height: '100vh', alignItems:'center'}}
+        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems:'center'}}
       >
 
         

@@ -1,24 +1,30 @@
 .container {
     height: 10vh;
     display: flex;
-    justify-content: space-between; /* Разделяем текст и ссылки */
+    justify-content: space-between;
+    /* Разделяем текст и ссылки */
     align-items: center;
     padding: 1rem 2rem;
     position: fixed;
     font-family: Raleway, sans-serif;
     text-align: center;
     z-index: 10000;
+    width: 100%;
 }
 
 /* Блок для печатающегося текста */
 .typingTextWrapper {
-    width: 700px; /* Фиксированная ширина */
-    height: 2rem; /* Фиксированная высота для текста */
+    width: 700px;
+    /* Фиксированная ширина */
+    height: 2rem;
+    /* Фиксированная высота для текста */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    overflow: hidden; /* Обрезаем содержимое, если оно выходит за пределы */
-    white-space: nowrap; /* Предотвращаем перенос текста */
+    overflow: hidden;
+    /* Обрезаем содержимое, если оно выходит за пределы */
+    white-space: nowrap;
+    /* Предотвращаем перенос текста */
     color: white;
     font-size: 2rem;
 }
@@ -47,7 +53,8 @@
 }
 
 /* Анимация ссылки при наведении */
-.borderXwidth a::before, .borderXwidth a::after {
+.borderXwidth a::before,
+.borderXwidth a::after {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -67,14 +74,68 @@
     bottom: 0;
 }
 
-.borderXwidth a:hover::before, .borderXwidth a:hover::after {
+.borderXwidth a:hover::before,
+.borderXwidth a:hover::after {
     opacity: 1;
     width: 100%;
 }
 
-.linkContainer{
+.linkContainer {
     margin-right: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 1515px) {
+    .container {
+        flex-direction: column;
+        position: relative;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .typingTextWrapper {
+        width: 100%;
+        /* Уменьшаем ширину для мобильных устройств */
+        font-size: 1.5rem;
+        /* Уменьшаем размер шрифта */
+        text-align: center;
+    }
+
+    .linkContainer {
+        margin-top: 1rem;
+        flex-direction: column;
+        /* Ссылки становятся в колонку */
+        margin-right: 0;
+    }
+
+    .container a {
+        font-size: 1.2rem;
+        /* Уменьшаем размер шрифта */
+        margin-right: 0;
+        margin-bottom: 1rem;
+        /* Добавляем отступы между ссылками */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        /* Меньше отступов на очень маленьких экранах */
+    }
+
+    .typingTextWrapper {
+        font-size: 1.2rem;
+        /* Еще меньше размер шрифта */
+        width: 100%;
+        /* Уменьшаем ширину */
+    }
+
+    .container a {
+        font-size: 1rem;
+        /* Уменьшаем размер шрифта еще больше */
+    }
 }

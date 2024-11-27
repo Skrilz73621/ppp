@@ -1,20 +1,22 @@
 import React from 'react';
 import styles from './Pets.module.css';
+import photo from '../../media/123.png'
 
-const Pets = ({ name, onClick }) => {
+const Pets = ({ name, onClick, description, photo}) => {
 
   return (
     <div className={styles.notification}>
       <div className={styles.notiglow} />
       <div className={styles.notiborderglow} />
-      <div className={styles.notititle}>{name}</div>
-      <div className={styles.notibody}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus,
-        expedita dignissimos recusandae sint facere! Nesciunt, accusamus maxime,
-        veritatis, consectetur sunt sint natus illum eos quas inventore eaque
-        excepturi. Quis!
+      <div className={styles.notititle}>{name}
+        <div className={styles.image}>
+          <img src={photo} alt="" />
+        </div>
       </div>
-      <button onClick={onClick} className={styles.btn}>Click here!</button>
+      <div className={styles.notibody}>
+    
+        {description}
+      </div>
     </div>
   );
 };

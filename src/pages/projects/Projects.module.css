@@ -8,6 +8,7 @@
 
 /* Стили для секций */
 .section {
+  background-image: url('https: //i0.wp.com/picjumbo.com/wp-content/uploads/camping-on-top-of-the-mountain-during-sunset-free-photo.jpg?w=600&quality=80');
   position: relative;
   opacity: 0; 
   transform: translateX(0); 
