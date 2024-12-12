@@ -54,7 +54,7 @@ const Projects = () => {
         />
       </div>
       <div ref={(el) => sectionRefs.current.push(el)} className={styles.section} onClick={() => window.open('https://e-menu-ivory.vercel.app/', '_blank')}>
-        <Pets name={'eMenu'} description={'This project is an interactive electronic menu designed for restaurants, cafes, or delivery services. The application provides an easy and modern way to display dishes for users, allowing them to quickly and easily browse available items. The menu includes photos and detailed descriptions of each dish, helping customers make better-informed decisions.'} photo={eMenuPhoto}/>
+        <Pets name={'eMenu (Only for phones)'} description={'This project is an interactive electronic menu designed for restaurants, cafes, or delivery services. The application provides an easy and modern way to display dishes for users, allowing them to quickly and easily browse available items. The menu includes photos and detailed descriptions of each dish, helping customers make better-informed decisions.'} photo={eMenuPhoto}/>
       </div>
       <div ref={(el) => sectionRefs.current.push(el)} className={styles.section} onClick={() => window.open('https://github.com/adilet0000/Project-Games.git', '_blank')}>
         <Pets name={'Gmae Search Project'} description={'This project is dedicated to showcasing my favorite games, providing a personal and interactive space to celebrate the games that have had the greatest impact on me. It features detailed information about each game, including their storylines, characters, and gameplay mechanics. The project is designed to highlight the unique aspects of these games, offering insights and reflections on what makes them special.'} photo={GSP}/>

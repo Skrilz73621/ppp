@@ -1,3 +1,4 @@
+/* Основной контейнер уведомления */
 .notification {
     z-index: 100;
     display: flex;
@@ -17,27 +18,35 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
     --color: #32a6ff;
+    overflow: hidden; /* Убирает элементы, выходящие за пределы контейнера */
 }
 
 .image img {
-    width: 600px;
+    width: 100%;
+    max-width: 600px; /* Ограничивает максимальную ширину изображения */
     margin-top: 1rem;
     object-fit: cover;
-    /* Обеспечивает правильное отображение изображения */
     border-radius: 0.5rem;
+    transition: transform 300ms ease; /* Добавлена плавная анимация масштабирования */
 }
 
+/* Улучшаем hover-эффект для изображения */
+.image img:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+/* Стили для контейнера glow */
 .notification:before {
     position: absolute;
     content: '';
     inset: 0.0625rem;
     border-radius: 0.9375rem;
     backdrop-filter: blur(5px);
-    /* Легкое размытие для внутреннего слоя */
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
 }
 
+/* Внутренний градиент */
 .notification:after {
     position: absolute;
     content: '';
@@ -49,6 +58,7 @@
     z-index: 4;
 }
 
+/* Наведение на блок */
 .notification:hover:after {
     transform: translateX(0.15rem);
 }
@@ -79,15 +89,16 @@
     transform: translateX(0.25rem);
 }
 
+/* Glow-эффекты */
 .notiglow,
 .notiborderglow {
     position: absolute;
     width: 50rem;
     height: 50rem;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, 0%);
     background: radial-gradient(circle closest-side at center, white, transparent);
     opacity: 0;
-    transition: opacity 300ms ease;
+    transition: opacity 300ms ease, transform 300ms ease;
 }
 
 .notiglow {
@@ -98,6 +109,7 @@
     z-index: 1;
 }
 
+/* Hover-эффект для glow */
 .notification:hover .notiglow {
     opacity: 0.1;
 }
@@ -106,80 +118,27 @@
     opacity: 0.1;
 }
 
-.note {
-    color: var(--color);
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 0.9rem;
-    width: 75%;
-}
-
-.btn {
-    z-index: 100;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.8rem 1.5rem;
-    background: var(--color);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #2a7dc9;
-    transform: scale(100, 10, 10);
-}
-
-.btn:active {
-    background-color: #1f65a5;
-}
-
-
-/* Медиа-запросы для мобильных устройств */
+/* Улучшенные медиа-запросы */
 @media (max-width: 1514px) {
-    .notification{
-        overflow-x: hidden;
-    }
-
     .notification {
         flex-direction: column;
-        /* Переход к вертикальному расположению */
         height: auto;
         margin-top: 5rem;
-        /* Уменьшаем отступ сверху */
     }
 
     .image img {
         width: 100%;
-        /* Изображение на мобильных устройствах будет занимать всю ширину */
-        height: 15rem;
-        /* Ограничиваем высоту изображения */
+        height: auto; /* Убираем фиксированную высоту */
         margin-top: 1rem;
     }
 
     .notititle {
         font-size: 2.5rem;
-        /* Уменьшаем размер шрифта заголовка */
     }
 
     .notibody {
         width: 80%;
-        /* Уменьшаем ширину текста */
-        font-size: 2rem;
-        /* Уменьшаем размер шрифта */
+        font-size: 1.8rem; /* Чуть уменьшен размер текста */
         padding: 0 1rem;
-        /* Меньше отступов для мобильных */
     }
-}
-
-@media (max-width: 1515px){
-
 }
