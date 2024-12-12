@@ -1,4 +1,3 @@
-/* Основной контейнер страницы */
 .contactsPage {
   display: flex;
   flex-direction: column;
@@ -11,6 +10,13 @@
   /* Обеспечиваем, что контейнер всегда будет занимать хотя бы 100vh */
   padding: 20px;
   box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-x: hidden;
 }
 
 /* Заголовок страницы */

@@ -33,12 +33,11 @@ export default function Contacts() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <Example id="particles" backgroundColor="#42313a" particleColor="#f1dcc9" />
 
       <div
         ref={cardsWrapperRef}
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems:'center'}}
       >
 
         

@@ -12,7 +12,7 @@ export default function AboutMe() {
       />
       <div className={styles.description}>
         <h2>Hello, I'm Nursultan</h2>
-        <p style={{textAlign:'left', width:'40rem'}}>
+        <p style={{textAlign:'center', width:'40rem'}}>
           I am a passionate front-end developer with strong expertise in HTML, CSS, JavaScript, React, and Git.
           I am currently expanding my skill set by learning back-end development to become a well-rounded full-stack developer.
           My goal is to create efficient and beautiful applications that make a positive impact in the tech world.
